@@ -1,6 +1,10 @@
 // The Last Wolves - Woodwork UI JavaScript
 
 const WoodworkUI = {
+    // Constants
+    NOTIFICATION_DURATION: 5000, // milliseconds
+    NOTIFICATION_FADE_DURATION: 300, // milliseconds
+    
     // UI State
     isOpen: false,
     currentTab: 'overview',
@@ -286,13 +290,13 @@ const WoodworkUI = {
         
         notifications.appendChild(notification);
 
-        // Auto remove after 5 seconds
+        // Auto remove after configured duration
         setTimeout(() => {
-            notification.style.animation = 'slideInRight 0.3s ease-out reverse';
+            notification.style.animation = `slideInRight ${this.NOTIFICATION_FADE_DURATION}ms ease-out reverse`;
             setTimeout(() => {
                 notification.remove();
-            }, 300);
-        }, 5000);
+            }, this.NOTIFICATION_FADE_DURATION);
+        }, this.NOTIFICATION_DURATION);
     },
 
     // Send NUI Message
@@ -313,13 +317,13 @@ const WoodworkUI = {
 function GetParentResourceName() {
     let resourceName = 'tlw-woodwork';
     
-    // Try to get from window if available (for FiveM/RedM)
-    if (window.invokeNative) {
-        try {
-            resourceName = window.invokeNative ? window.GetParentResourceName() : resourceName;
-        } catch (e) {
-            console.log('Running in browser mode');
+    // Try to get resource name from NUI context (for FiveM/RedM)
+    try {
+        if (typeof window.GetParentResourceName === 'function') {
+            resourceName = window.GetParentResourceName();
         }
+    } catch (e) {
+        console.log('Running in browser mode');
     }
     
     return resourceName;
