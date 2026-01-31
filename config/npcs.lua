@@ -231,7 +231,7 @@ Config.NPCs.Dialog = {
     },
     requests = {
         raise = 'Could we talk about a raise?',
-        break = 'Mind if I take a break?',
+        ['break'] = 'Mind if I take a break?',
         supplies = 'We\'re running low on supplies.'
     }
 }
