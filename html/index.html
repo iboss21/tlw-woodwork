@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Last Wolves - Woodwork</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container" id="app">
+        <!-- Main UI Container -->
+        <div class="woodwork-ui" style="display: none;">
+            <!-- Header with Western Style -->
+            <div class="ui-header">
+                <div class="header-decoration left"></div>
+                <h1 class="header-title">Woodwork Industry</h1>
+                <div class="header-decoration right"></div>
+            </div>
+
+            <!-- Navigation Tabs -->
+            <div class="nav-tabs">
+                <button class="nav-tab active" data-tab="overview">Overview</button>
+                <button class="nav-tab" data-tab="processing">Processing</button>
+                <button class="nav-tab" data-tab="business">Business</button>
+                <button class="nav-tab" data-tab="npcs">Workers</button>
+                <button class="nav-tab" data-tab="skills">Skills</button>
+            </div>
+
+            <!-- Tab Content -->
+            <div class="tab-content">
+                <!-- Overview Tab -->
+                <div class="tab-pane active" id="overview-tab">
+                    <div class="info-cards">
+                        <div class="info-card">
+                            <div class="card-icon">🪵</div>
+                            <div class="card-label">Lumber Stock</div>
+                            <div class="card-value" id="lumber-stock">0</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="card-icon">💰</div>
+                            <div class="card-label">Daily Revenue</div>
+                            <div class="card-value" id="daily-revenue">$0</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="card-icon">👥</div>
+                            <div class="card-label">Workers</div>
+                            <div class="card-value" id="worker-count">0</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="card-icon">⚒️</div>
+                            <div class="card-label">Efficiency</div>
+                            <div class="card-value" id="efficiency">0%</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Processing Tab -->
+                <div class="tab-pane" id="processing-tab">
+                    <div class="processing-section">
+                        <h2 class="section-title">Sawmill Operations</h2>
+                        <div class="processing-queue" id="processing-queue">
+                            <!-- Queue items will be dynamically added -->
+                        </div>
+                        <div class="processing-controls">
+                            <button class="btn btn-primary" id="start-processing">Start Processing</button>
+                            <button class="btn btn-secondary" id="pause-processing">Pause</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Business Tab -->
+                <div class="tab-pane" id="business-tab">
+                    <div class="business-section">
+                        <h2 class="section-title">Business Management</h2>
+                        <div class="business-stats">
+                            <div class="stat-row">
+                                <span class="stat-label">License Type:</span>
+                                <span class="stat-value" id="license-type">None</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Camp Level:</span>
+                                <span class="stat-value" id="camp-level">1</span>
+                            </div>
+                            <div class="stat-row">
+                                <span class="stat-label">Monthly Costs:</span>
+                                <span class="stat-value" id="monthly-costs">$0</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NPCs/Workers Tab -->
+                <div class="tab-pane" id="npcs-tab">
+                    <div class="npcs-section">
+                        <h2 class="section-title">Hired Workers</h2>
+                        <div class="workers-list" id="workers-list">
+                            <!-- Worker cards will be dynamically added -->
+                        </div>
+                        <button class="btn btn-primary" id="hire-worker">Hire New Worker</button>
+                    </div>
+                </div>
+
+                <!-- Skills Tab -->
+                <div class="tab-pane" id="skills-tab">
+                    <div class="skills-section">
+                        <h2 class="section-title">Your Skills</h2>
+                        <div class="skills-list" id="skills-list">
+                            <!-- Skill bars will be dynamically added -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Close Button -->
+            <button class="close-btn" id="close-ui">×</button>
+        </div>
+
+        <!-- Notification System -->
+        <div class="notifications" id="notifications"></div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

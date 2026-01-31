@@ -108,7 +108,7 @@ Config.NPCs.Customization = {
 Config.NPCs.Behavior = {
     workSchedule = {
         enabled = true,
-        defaultShift = {start = 6, end = 22}, -- 6 AM to 10 PM
+        defaultShift = {start = 6, ['end'] = 22}, -- 6 AM to 10 PM
         breakTime = {duration = 30, frequency = 240}, -- 30 min break every 4 hours
         nightShift = {enabled = true, payMultiplier = 1.2}
     },
